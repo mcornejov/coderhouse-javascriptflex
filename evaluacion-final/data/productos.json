@@ -1,0 +1,134 @@
+{
+  "negocio": {
+    "nombre": "Cafe Aurora",
+    "moneda": "CLP",
+    "actualizado": "2026-05-30"
+  },
+  "categorias": [
+    { "clave": "caliente", "etiqueta": "Bebidas calientes" },
+    { "clave": "fria", "etiqueta": "Bebidas frias" },
+    { "clave": "acompanamiento", "etiqueta": "Acompanamientos" }
+  ],
+  "productos": [
+    {
+      "id": "esp",
+      "nombre": "Espresso",
+      "precio": 1500,
+      "categoria": "caliente",
+      "descripcion": "Shot intenso de cafe recien molido.",
+      "imagen": "assets/img/caliente.svg"
+    },
+    {
+      "id": "cor",
+      "nombre": "Cortado",
+      "precio": 1800,
+      "categoria": "caliente",
+      "descripcion": "Espresso suavizado con un toque de leche.",
+      "imagen": "assets/img/caliente.svg"
+    },
+    {
+      "id": "lat",
+      "nombre": "Latte",
+      "precio": 2200,
+      "categoria": "caliente",
+      "descripcion": "Cafe suave con abundante leche cremosa.",
+      "imagen": "assets/img/caliente.svg"
+    },
+    {
+      "id": "cap",
+      "nombre": "Cappuccino",
+      "precio": 2400,
+      "categoria": "caliente",
+      "descripcion": "Espresso, leche y espuma en partes iguales.",
+      "imagen": "assets/img/caliente.svg"
+    },
+    {
+      "id": "cle",
+      "nombre": "Cafe con leche",
+      "precio": 2000,
+      "categoria": "caliente",
+      "descripcion": "El clasico de la manana, equilibrado y reconfortante.",
+      "imagen": "assets/img/caliente.svg"
+    },
+    {
+      "id": "cho",
+      "nombre": "Chocolate caliente",
+      "precio": 2500,
+      "categoria": "caliente",
+      "descripcion": "Chocolate derretido con leche, ideal para el frio.",
+      "imagen": "assets/img/caliente.svg"
+    },
+    {
+      "id": "ice",
+      "nombre": "Iced Latte",
+      "precio": 2600,
+      "categoria": "fria",
+      "descripcion": "Latte servido sobre hielo, fresco y suave.",
+      "imagen": "assets/img/fria.svg"
+    },
+    {
+      "id": "col",
+      "nombre": "Cold Brew",
+      "precio": 2800,
+      "categoria": "fria",
+      "descripcion": "Cafe de extraccion en frio, 12 horas de reposo.",
+      "imagen": "assets/img/fria.svg"
+    },
+    {
+      "id": "fra",
+      "nombre": "Frappe de cafe",
+      "precio": 3000,
+      "categoria": "fria",
+      "descripcion": "Cafe batido con hielo y crema.",
+      "imagen": "assets/img/fria.svg"
+    },
+    {
+      "id": "lim",
+      "nombre": "Limonada de menta",
+      "precio": 2300,
+      "categoria": "fria",
+      "descripcion": "Limonada natural con hojas de menta fresca.",
+      "imagen": "assets/img/fria.svg"
+    },
+    {
+      "id": "med",
+      "nombre": "Medialuna",
+      "precio": 800,
+      "categoria": "acompanamiento",
+      "descripcion": "Medialuna de mantequilla, dorada y esponjosa.",
+      "imagen": "assets/img/acompanamiento.svg"
+    },
+    {
+      "id": "tos",
+      "nombre": "Tostado de jamon y queso",
+      "precio": 2500,
+      "categoria": "acompanamiento",
+      "descripcion": "Pan de molde, jamon y queso fundido.",
+      "imagen": "assets/img/acompanamiento.svg"
+    },
+    {
+      "id": "tor",
+      "nombre": "Porcion de torta",
+      "precio": 2200,
+      "categoria": "acompanamiento",
+      "descripcion": "Porcion del dia, consulta el sabor disponible.",
+      "imagen": "assets/img/acompanamiento.svg"
+    },
+    {
+      "id": "alf",
+      "nombre": "Alfajor",
+      "precio": 1200,
+      "categoria": "acompanamiento",
+      "descripcion": "Alfajor de maicena relleno con manjar.",
+      "imagen": "assets/img/acompanamiento.svg"
+    },
+    {
+      "id": "gal",
+      "nombre": "Galletas (x3)",
+      "precio": 900,
+      "categoria": "acompanamiento",
+      "descripcion": "Trio de galletas caseras de mantequilla.",
+      "imagen": "assets/img/acompanamiento.svg"
+    }
+  ]
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso JavaScript Flex - Miguel Cornejo</title>
+<link rel="icon" type="image/svg+xml" href="evaluacion-final/assets/img/logo.svg">
+<style>
+    :root{--fondo:#fdf6ec;--tarjeta:#fff;--suave:#fff8ee;--marron:#6b4226;--marron2:#8a5a3b;
+        --acento:#c8a97e;--texto:#3b2f2f;--suavetx:#6e5d52;--borde:#e6d8c3;--verde:#4f7c4a;
+        --radio:10px;--sombra:0 2px 8px rgba(107,66,38,.08)}
+    *{box-sizing:border-box}
+    body{font-family:Georgia,'Times New Roman',serif;margin:0;background:var(--fondo);color:var(--texto);line-height:1.55}
+    .cabecera{background:var(--marron);color:var(--fondo);padding:34px 20px;text-align:center;border-bottom:4px solid var(--acento)}
+    .cabecera h1{margin:0 0 6px;font-size:2.2rem;letter-spacing:1px}
+    .cabecera p{margin:0;color:var(--acento);font-style:italic}
+    .contenedor{max-width:980px;margin:30px auto;padding:0 20px;display:flex;flex-direction:column;gap:28px}
+    .intro{background:var(--suave);border-left:4px solid var(--acento);padding:16px 20px;border-radius:var(--radio)}
+    .intro p{margin:0}
+    section h2{color:var(--marron);border-bottom:2px solid var(--acento);padding-bottom:8px;font-size:1.4rem}
+    .destacado{background:var(--tarjeta);border:1px solid var(--borde);border-radius:var(--radio);box-shadow:var(--sombra);padding:22px;display:flex;flex-direction:column;gap:12px}
+    .destacado h3{margin:0;color:var(--marron);font-size:1.3rem}
+    .destacado p{margin:0;color:var(--suavetx);font-size:.95rem}
+    table{width:100%;border-collapse:collapse;background:var(--tarjeta);border-radius:var(--radio);overflow:hidden;box-shadow:var(--sombra)}
+    th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--borde);font-size:.94rem}
+    th{background:var(--marron);color:var(--fondo);font-size:.88rem}
+    tr:last-child td{border-bottom:none}
+    td a{color:var(--marron2)}
+    .tag{display:inline-block;font-size:.68rem;padding:2px 9px;border-radius:10px;color:#fff;text-transform:uppercase;letter-spacing:.5px}
+    .tag.consola{background:var(--acento)} .tag.navegador{background:var(--verde)}
+    .boton{display:inline-block;background:var(--marron);color:var(--fondo);text-decoration:none;padding:10px 16px;border-radius:6px;align-self:flex-start}
+    .boton:hover{background:var(--marron2)}
+    .pie{text-align:center;padding:24px;color:var(--suavetx);font-size:.9rem}
+</style>
+</head>
+<body>
+<header class="cabecera">
+    <h1>Curso de JavaScript Flex</h1>
+    <p>Entregas del curso &middot; Miguel Cornejo &middot; CoderHouse</p>
+</header>
+<main class="contenedor">
+    <section class="intro">
+        <p>Este sitio reúne las 14 prácticas del curso de JavaScript Flex y el proyecto final.
+        El simulador de la Evaluación Final está desplegado y se puede usar directamente desde aquí;
+        cada práctica incluye su código y un documento con la salida y la explicación.</p>
+    </section>
+
+    <section>
+        <h2>Evaluación Final</h2>
+        <div class="destacado">
+            <h3>Simulador interactivo Café Aurora</h3>
+            <p>Tienda de bebidas con catálogo cargado por <code>fetch</code> desde un JSON, carrito,
+            totales, historial de compras y notificaciones con una librería externa.</p>
+            <a class="boton" href="evaluacion-final/index.html">Abrir simulador</a>
+        </div>
+    </section>
+
+    <section>
+        <h2>Prácticas</h2>
+        <table>
+            <thead><tr><th>#</th><th>Tema</th><th>Tipo</th><th>Documento</th><th>Código / App</th></tr></thead>
+            <tbody>
+                <tr><td>01</td><td>Crear y mutar arrays (push, pop, splice)</td><td><span class="tag consola">Consola</span></td><td><a href="practicas/Practica01_Arrays_Mutar/Practica01.md">Doc</a></td><td><a href="practicas/Practica01_Arrays_Mutar/manipularArrays.js">Código</a></td></tr>
+                <tr><td>02</td><td>Objetos: notación punto y corchetes</td><td><span class="tag consola">Consola</span></td><td><a href="practicas/Practica02_Objetos_Notacion/Practica02.md">Doc</a></td><td><a href="practicas/Practica02_Objetos_Notacion/objetos.js">Código</a></td></tr>
+                <tr><td>03</td><td>Objetos: métodos y this</td><td><span class="tag consola">Consola</span></td><td><a href="practicas/Practica03_Objetos_Metodos/Practica03.md">Doc</a></td><td><a href="practicas/Practica03_Objetos_Metodos/libro.js">Código</a></td></tr>
+                <tr><td>04</td><td>Diferencias entre arrays y objetos</td><td><span class="tag consola">Consola</span></td><td><a href="practicas/Practica04_Arrays_vs_Objetos/Practica04.md">Doc</a></td><td><a href="practicas/Practica04_Arrays_vs_Objetos/arraysVsObjetos.js">Código</a></td></tr>
+                <tr><td>05</td><td>Arrays de objetos y console.table</td><td><span class="tag consola">Consola</span></td><td><a href="practicas/Practica05_Arrays_de_Objetos/Practica05.md">Doc</a></td><td><a href="practicas/Practica05_Arrays_de_Objetos/usuarios.js">Código</a></td></tr>
+                <tr><td>06</td><td>Buscar y filtrar (find / filter)</td><td><span class="tag consola">Consola</span></td><td><a href="practicas/Practica06_Find_Filter/Practica06.md">Doc</a></td><td><a href="practicas/Practica06_Find_Filter/buscarFiltrar.js">Código</a></td></tr>
+                <tr><td>07</td><td>Ordenar con sort y localeCompare</td><td><span class="tag consola">Consola</span></td><td><a href="practicas/Practica07_Sort/Practica07.md">Doc</a></td><td><a href="practicas/Practica07_Sort/ordenar.js">Código</a></td></tr>
+                <tr><td>08</td><td>Buenas prácticas con objetos</td><td><span class="tag consola">Consola</span></td><td><a href="practicas/Practica08_Buenas_Practicas/Practica08.md">Doc</a></td><td><a href="practicas/Practica08_Buenas_Practicas/buenasPracticas.js">Código</a></td></tr>
+                <tr><td>09</td><td>setTimeout y setInterval</td><td><span class="tag consola">Consola</span></td><td><a href="practicas/Practica09_setTimeout_setInterval/Practica09.md">Doc</a></td><td><a href="practicas/Practica09_setTimeout_setInterval/temporizadores.js">Código</a></td></tr>
+                <tr><td>10</td><td>Cancelar timers (clearTimeout / clearInterval)</td><td><span class="tag consola">Consola</span></td><td><a href="practicas/Practica10_Cancelar_Timers/Practica10.md">Doc</a></td><td><a href="practicas/Practica10_Cancelar_Timers/cancelarTimers.js">Código</a></td></tr>
+                <tr><td>11</td><td>Errores: throw y try/catch</td><td><span class="tag consola">Consola</span></td><td><a href="practicas/Practica11_Throw_TryCatch/Practica11.md">Doc</a></td><td><a href="practicas/Practica11_Throw_TryCatch/validacion.js">Código</a></td></tr>
+                <tr><td>12</td><td>Promesas: then / catch / finally</td><td><span class="tag navegador">Navegador</span></td><td><a href="practicas/Practica12_Promesas/Practica12.md">Doc</a></td><td><a href="practicas/Practica12_Promesas/index.html">Abrir app</a></td></tr>
+                <tr><td>13</td><td>Librería externa: SweetAlert2</td><td><span class="tag navegador">Navegador</span></td><td><a href="practicas/Practica13_Librerias_SweetAlert/Practica13.md">Doc</a></td><td><a href="practicas/Practica13_Librerias_SweetAlert/index.html">Abrir app</a></td></tr>
+                <tr><td>14</td><td>Librería externa: Toastify</td><td><span class="tag navegador">Navegador</span></td><td><a href="practicas/Practica14_Librerias_Toastify/Practica14.md">Doc</a></td><td><a href="practicas/Practica14_Librerias_Toastify/index.html">Abrir app</a></td></tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+<footer class="pie">Curso de JavaScript Flex &middot; CoderHouse &middot; Miguel Cornejo</footer>
+</body>
+</html>

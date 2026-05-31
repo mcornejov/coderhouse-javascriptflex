@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Logo Cafe Aurora">
+  <circle cx="32" cy="32" r="32" fill="#6b4226"/>
+  <path d="M14 44 A18 18 0 0 1 50 44 Z" fill="#c8a97e"/>
+  <g fill="none" stroke="#fdf6ec" stroke-width="2.4" stroke-linecap="round">
+    <path d="M28 16 c0 4 -4 5 -4 9 s4 5 4 9"/>
+    <path d="M36 16 c0 4 -4 5 -4 9 s4 5 4 9"/>
+  </g>
+  <rect x="16" y="40" width="32" height="12" rx="4" fill="#fff8ee"/>
+  <path d="M48 42 h4 a5 5 0 0 1 0 10 h-4" fill="none" stroke="#fff8ee" stroke-width="3"/>
+</svg>

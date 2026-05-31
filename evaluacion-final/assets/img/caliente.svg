@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120" role="img" aria-label="Bebida caliente">
+  <rect width="120" height="120" fill="#fff8ee"/>
+  <g fill="none" stroke="#8a5a3b" stroke-width="3.5" stroke-linecap="round">
+    <path d="M50 26 c0 6 -6 8 -6 14 s6 8 6 14"/>
+    <path d="M62 24 c0 6 -6 8 -6 14 s6 8 6 14"/>
+    <path d="M74 26 c0 6 -6 8 -6 14 s6 8 6 14"/>
+  </g>
+  <path d="M30 62 h54 l-5 28 a8 8 0 0 1 -8 7 H43 a8 8 0 0 1 -8 -7 Z" fill="#6b4226"/>
+  <rect x="32" y="62" width="50" height="8" rx="2" fill="#c8a97e"/>
+  <path d="M84 68 h10 a12 12 0 0 1 0 24 h-6" fill="none" stroke="#6b4226" stroke-width="5"/>
+</svg>

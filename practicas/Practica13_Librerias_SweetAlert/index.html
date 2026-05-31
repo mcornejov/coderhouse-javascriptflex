@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 13 - Librerías externas: SweetAlert2</title>
+
+    <!-- Método CDN: la librería SweetAlert2 se carga por enlace externo.
+         Se fija la versión 11 para mantener control de versiones. -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            max-width: 640px;
+            margin: 40px auto;
+            padding: 0 16px;
+            background-color: #f7f1e8;
+            color: #3a2c1a;
+        }
+
+        h1 {
+            color: #6f4e37;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        .grupo-botones {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        button {
+            padding: 12px 16px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            background-color: #6f4e37;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #553a29;
+        }
+
+        button:disabled {
+            background-color: #b3a392;
+            cursor: progress;
+        }
+    </style>
+</head>
+<body>
+    <h1>Integración de SweetAlert2</h1>
+    <p>
+        Esta práctica demuestra dos formas de usar una librería externa:
+        cargada por CDN en el HTML y cargada de forma dinámica con
+        <code>import()</code> desde JavaScript.
+    </p>
+
+    <div class="grupo-botones">
+        <button id="boton-alerta-cdn" type="button">
+            Mostrar alerta (CDN ya cargado)
+        </button>
+
+        <button id="boton-alerta-dinamica" type="button">
+            Cargar librería y mostrar alerta (import dinámico)
+        </button>
+    </div>
+
+    <!-- Toda la lógica está en app.js, sin JavaScript en línea.
+         Se carga como módulo para poder usar import() dinámico. -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>

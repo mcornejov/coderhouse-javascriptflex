@@ -1,0 +1,649 @@
+/* =========================================================
+   Cafe Aurora - Simulador de Pedidos (Entrega Final)
+   Paleta inspirada en cafeteria: cremas, marrones y verdes
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --color-fondo: #fdf6ec;
+    --color-tarjeta: #ffffff;
+    --color-tarjeta-suave: #fff8ee;
+    --color-marron: #6b4226;
+    --color-marron-claro: #8a5a3b;
+    --color-acento: #c8a97e;
+    --color-texto: #3b2f2f;
+    --color-texto-suave: #6e5d52;
+    --color-borde: #e6d8c3;
+    --color-exito: #4f7c4a;
+    --color-error: #b54b3a;
+    --sombra: 0 2px 8px rgba(107, 66, 38, 0.08);
+    --radio: 10px;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.5;
+}
+
+/* --- Cabecera --- */
+
+.cabecera {
+    background-color: var(--color-marron);
+    color: var(--color-fondo);
+    padding: 24px 20px;
+    border-bottom: 4px solid var(--color-acento);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.cabecera .logo {
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+}
+
+.cabecera-texto {
+    text-align: left;
+}
+
+.cabecera h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+}
+
+.subtitulo {
+    margin: 4px 0 0;
+    color: var(--color-acento);
+    font-style: italic;
+}
+
+/* --- Contenedor general --- */
+
+.contenedor {
+    max-width: 920px;
+    margin: 30px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.intro p {
+    margin: 0;
+    background-color: var(--color-tarjeta-suave);
+    border-left: 4px solid var(--color-acento);
+    padding: 16px 20px;
+    border-radius: var(--radio);
+}
+
+.tarjeta {
+    background-color: var(--color-tarjeta);
+    padding: 24px;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    border: 1px solid var(--color-borde);
+}
+
+.tarjeta h2 {
+    color: var(--color-marron);
+    margin: 0 0 16px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--color-acento);
+    padding-bottom: 8px;
+}
+
+/* --- Formulario del cliente --- */
+
+.form-cliente {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.fila {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.fila .campo {
+    flex: 1;
+    min-width: 220px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.campo label,
+.etiqueta {
+    font-weight: bold;
+    color: var(--color-marron-claro);
+    font-size: 0.95rem;
+}
+
+.campo input[type="text"],
+.campo input[type="email"] {
+    padding: 10px 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--color-tarjeta-suave);
+    color: var(--color-texto);
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: var(--color-marron-claro);
+    background-color: #fff;
+}
+
+.opciones {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.acciones-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.aviso {
+    margin: 0;
+    font-size: 0.9rem;
+    min-height: 1.2em;
+    color: var(--color-exito);
+}
+
+.aviso.error {
+    color: var(--color-error);
+}
+
+/* --- Botones --- */
+
+.boton {
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, transform 0.05s ease;
+}
+
+.boton:active {
+    transform: translateY(1px);
+}
+
+.boton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.boton-primario {
+    background-color: var(--color-marron);
+    color: var(--color-fondo);
+}
+
+.boton-primario:hover {
+    background-color: var(--color-marron-claro);
+}
+
+.boton-secundario {
+    background-color: var(--color-tarjeta-suave);
+    color: var(--color-marron);
+    border: 1px solid var(--color-borde);
+}
+
+.boton-secundario:hover {
+    background-color: var(--color-acento);
+    color: #fff;
+}
+
+.boton-texto {
+    background: transparent;
+    color: var(--color-error);
+    padding: 4px 8px;
+    font-size: 0.9rem;
+}
+
+.boton-texto:hover {
+    text-decoration: underline;
+}
+
+/* --- Barra de busqueda --- */
+
+.barra-busqueda {
+    margin-bottom: 14px;
+}
+
+.barra-busqueda input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    background-color: var(--color-tarjeta-suave);
+    color: var(--color-texto);
+}
+
+.barra-busqueda input:focus {
+    outline: none;
+    border-color: var(--color-marron-claro);
+    background-color: #fff;
+}
+
+/* --- Filtros del menu --- */
+
+.filtros {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.boton-filtro {
+    background-color: var(--color-tarjeta-suave);
+    color: var(--color-marron);
+    border: 1px solid var(--color-borde);
+    padding: 6px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.boton-filtro:hover {
+    background-color: var(--color-acento);
+    color: #fff;
+}
+
+.boton-filtro.activo {
+    background-color: var(--color-marron);
+    color: var(--color-fondo);
+    border-color: var(--color-marron);
+}
+
+/* --- Grilla de productos --- */
+
+.grilla-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 14px;
+}
+
+.producto {
+    background-color: var(--color-tarjeta-suave);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+}
+
+.producto-img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid var(--color-borde);
+}
+
+.producto h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--color-marron);
+}
+
+.producto-desc {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--color-texto-suave);
+    flex-grow: 1;
+}
+
+.producto .categoria-tag {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background-color: var(--color-acento);
+    color: #fff;
+    font-size: 0.65rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.producto .precio {
+    font-weight: bold;
+    color: var(--color-marron-claro);
+    font-size: 1.05rem;
+    margin: 0;
+}
+
+.boton-agregar {
+    background-color: var(--color-acento);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.boton-agregar:hover {
+    background-color: var(--color-marron-claro);
+}
+
+.sin-resultados,
+.cargando {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--color-texto-suave);
+    font-style: italic;
+    padding: 20px 0;
+}
+
+.error-catalogo {
+    grid-column: 1 / -1;
+    background-color: #fdecea;
+    border: 1px solid var(--color-error);
+    border-radius: var(--radio);
+    padding: 16px 20px;
+    color: var(--color-error);
+}
+
+.error-catalogo .error-pista {
+    color: var(--color-texto-suave);
+    font-size: 0.85rem;
+    margin-bottom: 0;
+}
+
+/* --- Carrito --- */
+
+.cabecera-carrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.cabecera-carrito h2 {
+    margin: 0;
+    border: none;
+    padding: 0;
+}
+
+.carrito-vacio {
+    color: var(--color-texto-suave);
+    font-style: italic;
+    text-align: center;
+    padding: 16px 0;
+}
+
+.lista-carrito {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.item-carrito {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    background-color: var(--color-tarjeta-suave);
+    border-radius: 6px;
+    border: 1px solid var(--color-borde);
+}
+
+.item-carrito .nombre {
+    font-weight: bold;
+    color: var(--color-marron);
+}
+
+.item-carrito .controles {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.item-carrito .controles button {
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--color-borde);
+    background-color: #fff;
+    color: var(--color-marron);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+}
+
+.item-carrito .controles button:hover {
+    background-color: var(--color-acento);
+    color: #fff;
+}
+
+.item-carrito .cantidad {
+    min-width: 20px;
+    text-align: center;
+}
+
+.item-carrito .subtotal {
+    font-weight: bold;
+    color: var(--color-marron-claro);
+    min-width: 70px;
+    text-align: right;
+}
+
+.item-carrito .eliminar {
+    background: none;
+    border: none;
+    color: var(--color-error);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.item-carrito .eliminar:hover {
+    text-decoration: underline;
+}
+
+.resumen-carrito {
+    border-top: 2px dashed var(--color-borde);
+    padding-top: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.resumen-carrito .linea {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color-texto-suave);
+}
+
+.resumen-carrito .linea.descuento {
+    color: var(--color-exito);
+}
+
+.resumen-carrito .linea.total {
+    font-size: 1.15rem;
+    color: var(--color-marron);
+    font-weight: bold;
+    border-top: 1px solid var(--color-borde);
+    padding-top: 8px;
+    margin-top: 4px;
+}
+
+.resumen-carrito .boton {
+    margin-top: 12px;
+    align-self: flex-end;
+}
+
+/* --- Confirmacion --- */
+
+.tarjeta-confirmacion {
+    background-color: #f3efe6;
+    border-color: var(--color-acento);
+}
+
+#contenido-confirmacion {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px solid var(--color-borde);
+    margin-bottom: 16px;
+}
+
+#contenido-confirmacion h3 {
+    color: var(--color-marron);
+    margin-top: 0;
+}
+
+#contenido-confirmacion .dato-pedido {
+    margin: 4px 0;
+    color: var(--color-texto-suave);
+}
+
+.detalle-pedido {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0;
+}
+
+.detalle-pedido li {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    border-bottom: 1px dashed var(--color-borde);
+}
+
+#contenido-confirmacion .total-final {
+    font-size: 1.2rem;
+    color: var(--color-marron);
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+/* --- Historial de compras --- */
+
+.historial-vacio {
+    color: var(--color-texto-suave);
+    font-style: italic;
+}
+
+.grilla-historial {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.pedido-historial {
+    background-color: var(--color-tarjeta-suave);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+.pedido-historial-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+}
+
+.pedido-numero {
+    font-weight: bold;
+    color: var(--color-marron);
+}
+
+.pedido-fecha {
+    font-size: 0.8rem;
+    color: var(--color-texto-suave);
+}
+
+.pedido-resumen {
+    margin: 0 0 8px;
+    font-size: 0.85rem;
+    color: var(--color-texto-suave);
+}
+
+.pedido-total {
+    margin: 0;
+    font-weight: bold;
+    color: var(--color-marron-claro);
+    font-size: 1.1rem;
+}
+
+/* --- Pie --- */
+
+.pie {
+    text-align: center;
+    padding: 20px;
+    color: var(--color-texto-suave);
+    font-size: 0.9rem;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 600px) {
+    .cabecera {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cabecera-texto {
+        text-align: center;
+    }
+
+    .cabecera h1 {
+        font-size: 1.7rem;
+    }
+
+    .tarjeta {
+        padding: 16px;
+    }
+
+    .item-carrito {
+        grid-template-columns: 1fr auto;
+        gap: 6px;
+    }
+
+    .item-carrito .subtotal {
+        text-align: left;
+    }
+}

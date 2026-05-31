@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 14 - Librerías externas: Toastify</title>
+
+    <!--
+        Toastify-js cargada por CDN (jsDelivr).
+        Primero el CSS de la librería, luego nuestros estilos para poder ajustar.
+        Se fija la versión (1.12.0) para evitar cambios inesperados al actualizar el paquete.
+    -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0/src/toastify.min.css">
+
+    <style>
+        :root {
+            --cafe-oscuro: #3e2723;
+            --cafe-medio: #6f4e37;
+            --crema: #f3e9dc;
+            --verde-exito: #2e7d32;
+            --rojo-error: #c62828;
+            --azul-info: #1565c0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            padding: 2rem 1rem;
+            background-color: var(--crema);
+            color: var(--cafe-oscuro);
+            display: flex;
+            justify-content: center;
+        }
+
+        main {
+            width: 100%;
+            max-width: 640px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 6px 18px rgba(62, 39, 35, 0.15);
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 1.6rem;
+            color: var(--cafe-medio);
+        }
+
+        p.intro {
+            line-height: 1.5;
+        }
+
+        section {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e0d5c7;
+        }
+
+        h2 {
+            font-size: 1.1rem;
+            color: var(--cafe-medio);
+        }
+
+        .grupo-botones {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        button {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 0.7rem 1.2rem;
+            cursor: pointer;
+            transition: transform 0.1s ease, opacity 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        #boton-exito {
+            background-color: var(--verde-exito);
+        }
+
+        #boton-error {
+            background-color: var(--rojo-error);
+        }
+
+        #boton-cargar-libreria {
+            background-color: var(--azul-info);
+        }
+
+        .nota {
+            font-size: 0.85rem;
+            color: #5d4037;
+            margin-top: 1rem;
+            line-height: 1.4;
+        }
+
+        code {
+            background-color: #f3e9dc;
+            padding: 0.1rem 0.35rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Café Aurora - Notificaciones con Toastify</h1>
+
+        <p class="intro">
+            Esta práctica integra la librería externa <strong>Toastify-js</strong>
+            cargada por CDN. Los botones disparan notificaciones tipo "toast"
+            (mensajes flotantes no bloqueantes) de éxito y de error, sin escribir
+            JavaScript dentro del HTML.
+        </p>
+
+        <section>
+            <h2>Notificaciones tipo toast</h2>
+            <p>
+                Cada botón llama a Toastify para mostrar un aviso breve que aparece
+                en la esquina de la pantalla y desaparece solo.
+            </p>
+            <div class="grupo-botones">
+                <button id="boton-exito" type="button">Mostrar éxito</button>
+                <button id="boton-error" type="button">Mostrar error</button>
+            </div>
+        </section>
+
+        <section>
+            <h2>Carga dinámica de una librería</h2>
+            <p>
+                Este botón inserta un tag <code>&lt;script&gt;</code> en tiempo de
+                ejecución para cargar una librería adicional (Day.js) y, recién
+                cuando termina de descargarse (evento <code>onload</code>), la usa
+                para mostrar la fecha y hora actual en un toast.
+            </p>
+            <div class="grupo-botones">
+                <button id="boton-cargar-libreria" type="button">
+                    Cargar librería y mostrar fecha
+                </button>
+            </div>
+            <p class="nota">
+                Si el CDN principal de Toastify no responde, la página carga una
+                copia de respaldo (fallback) automáticamente. La lógica completa
+                vive en <code>app.js</code>.
+            </p>
+        </section>
+    </main>
+
+    <!--
+        Carga de la librería Toastify por CDN.
+        El atributo onerror activa un fallback: si jsDelivr no responde,
+        se intenta descargar la misma versión desde unpkg.
+    -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/toastify-js@1.12.0"
+        onerror="cargarToastifyFallback()"></script>
+
+    <!-- Nuestra lógica, siempre como archivo externo (sin JS inline). -->
+    <script src="app.js"></script>
+</body>
+</html>

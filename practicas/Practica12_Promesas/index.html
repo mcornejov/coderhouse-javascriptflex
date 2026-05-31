@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 12 - Promesas: then, catch y finally</title>
+    <style>
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f3ece2;
+            color: #3b2f2f;
+            margin: 0;
+            padding: 2rem;
+        }
+
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            background-color: #fffaf3;
+            border: 1px solid #d8c7b0;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+        }
+
+        h1 {
+            color: #6f4e37;
+            margin-top: 0;
+        }
+
+        #mensajes {
+            margin-top: 1.5rem;
+            border-top: 1px dashed #d8c7b0;
+            padding-top: 1rem;
+        }
+
+        .mensaje {
+            margin: 0.4rem 0;
+            padding: 0.6rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        .mensaje--info {
+            background-color: #eef3f7;
+            color: #2f4858;
+        }
+
+        .mensaje--exito {
+            background-color: #e6f4ea;
+            color: #1e6b3a;
+        }
+
+        .mensaje--error {
+            background-color: #fbe9e7;
+            color: #a23b2c;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Café Aurora - Envío de pedidos</h1>
+        <p>
+            Esta página simula el envío de pedidos a la cocina mediante promesas.
+            Cada pedido se resuelve o se rechaza de forma aleatoria luego de 2 segundos.
+            Los resultados aparecen más abajo y también en la consola del navegador.
+        </p>
+
+        <section id="mensajes" aria-live="polite"></section>
+    </main>
+
+    <script src="promesas.js"></script>
+</body>
+</html>
